@@ -13,9 +13,12 @@
 <script>
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-const o1 = audioCtx.createOscillator();
-const o2 = audioCtx.createOscillator();
+let o1;
+let o2;
 $("#s").click(function(){
+
+o1 = audioCtx.createOscillator();
+o2 = audioCtx.createOscillator();
 
 o1.type = "sine";
 o1.frequency.setValueAtTime($("#one").val(), audioCtx.currentTime); // value in hertz
